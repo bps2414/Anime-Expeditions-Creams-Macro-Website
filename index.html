@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cream's Macro | Anime Expeditions — Vision-Based Auto-Farm</title>
+  <meta name="description" content="Free, open-source vision-based auto-farm macro for Anime Expeditions on Roblox. Native window docking, task queueing, Discord webhooks, and automatic recovery.">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Cweamy/Anime-Expeditions-Creams-Macro/main/logo.ico">
+</head>
+<body>
+
+  <!-- Top App Navigation Bar -->
+  <header class="app-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo & Brand -->
+        <a href="#" class="brand-logo">
+          <div class="brand-icon-box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div class="logo-text-group">
+            <span class="logo-tag">ANIME EXPEDITIONS</span>
+            <span class="logo-title">Cream's Macro</span>
+          </div>
+          <span id="ver-badge" class="ver-badge">v0.0.1</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#tutorial" class="nav-link">Tutorial</a></li>
+          <li><a href="#downloads" class="nav-link">Downloads</a></li>
+        </ul>
+
+        <!-- Right Quick Actions: GitHub, Discord, YouTube, CTA -->
+        <div class="header-actions">
+          <!-- GitHub Repository Link -->
+          <a href="https://github.com/Cweamy/Anime-Expeditions-Creams-Macro" target="_blank" rel="noopener" class="icon-btn" title="GitHub Repository">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+
+          <!-- Discord Community Link -->
+          <a href="https://discord.gg/txB82C9G8" target="_blank" rel="noopener" class="icon-btn" title="Discord Community">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.093.252-.19.373-.287a.075.075 0 0 1 .078-.01c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.009c.12.098.246.195.373.288a.077.077 0 0 1-.006.127c-.6.34-1.229.64-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube Video Link -->
+          <a href="https://www.youtube.com/watch?v=pPazUOL2a3w" target="_blank" rel="noopener" class="icon-btn" title="YouTube Video Tutorial">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+
+          <!-- Primary CTA Button -->
+          <a href="#downloads" class="btn btn-primary">Get Macro</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text-col">
+          <div class="hero-tag">
+            <span>100% Vision-Based • Screen Matching • No Inject</span>
+          </div>
+
+          <h1 class="hero-title">
+            The Vision-Based Auto-Farm Engine for Anime Expeditions
+          </h1>
+
+          <p class="hero-subtitle">
+            Free and open-source automation macro for Roblox. Features native window docking, task queue management, drag-and-drop macro steps, auto-recovery, and Discord OCR reports.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://github.com/Cweamy/Anime-Expeditions-Creams-Macro/releases/latest" target="_blank" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Windows Zip
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=pPazUOL2a3w" target="_blank" class="btn btn-youtube">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              Watch Video Tutorial
+            </a>
+
+            <a href="https://github.com/Cweamy/Anime-Expeditions-Creams-Macro" target="_blank" class="btn btn-secondary">
+              GitHub Repo
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-box">
+              <span class="stat-number" id="download-count">10,000+</span>
+              <span class="stat-label">Downloads</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">MIT</span>
+              <span class="stat-label">License</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-number">Win / Mac</span>
+              <span class="stat-label">Platforms</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Application Window UI Shell Mockup -->
+        <div class="app-mockup">
+          <div class="mockup-header">
+            <span>Cream's Macro — Anime Expeditions</span>
+            <span>Docked Mode</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-sidebar">
+              <div class="mockup-nav-row active">Dashboard</div>
+              <div class="mockup-nav-row">Task Queue</div>
+              <div class="mockup-nav-row">Macro Manager</div>
+              <div class="mockup-nav-row">Challenge Mode</div>
+
+              <div class="mockup-mini-console">
+                [14:22:01] Roblox docked.<br>
+                [14:22:03] Story Task 1/10 active.<br>
+                [14:25:40] Match Clear! Victory OCR logged.
+              </div>
+            </div>
+
+            <div class="mockup-display">
+              <div class="mockup-card-inner">
+                <div class="mockup-card-title">
+                  <span>QUEUE AUTOMATION</span>
+                  <span style="color: var(--accent-teal); font-family: var(--font-mono); font-size: 0.7rem;">Task 1 of 3</span>
+                </div>
+
+                <div class="mockup-task-item">
+                  <span>Story — Act 3 (Hard)</span>
+                  <span style="color: var(--accent-green); font-family: var(--font-mono);">[3/10]</span>
+                </div>
+                <div class="mockup-task-item">
+                  <span>Raid — Demon Castle</span>
+                  <span style="color: var(--text-dark); font-family: var(--font-mono);">[Queued]</span>
+                </div>
+                <div class="mockup-task-item">
+                  <span>Expedition — Daily Cap</span>
+                  <span style="color: var(--text-dark); font-family: var(--font-mono);">[Queued]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Security Integrity Strip -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="trust-flex">
+        <span><strong class="trust-check">✓</strong> No Memory Injection</span>
+        <span><strong class="trust-check">✓</strong> Multi-Scale Image Matching</span>
+        <span><strong class="trust-check">✓</strong> Auto Lobby Recovery on Defeat</span>
+        <span><strong class="trust-check">✓</strong> Discord Webhook OCR Match Reports</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Core Subsystems</h2>
+        <p class="section-subtitle">Designed for long-run, stable farming without manual intervention.</p>
+      </div>
+
+      <div class="bento-container">
+        <div class="bento-box bento-8">
+          <div class="bento-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="bento-h3">Docked Window Engine</h3>
+          <p class="bento-p">
+            Roblox is embedded directly into the macro UI as a native child window. Input commands register cleanly without stealing desktop cursor focus or relying on external overlay windows.
+          </p>
+        </div>
+
+        <div class="bento-box bento-4">
+          <div class="bento-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3 class="bento-h3">Task Queue & Recovery</h3>
+          <p class="bento-p">
+            Build queues for Story, Raid, or Expedition stages. If a match is lost or stuck, the macro automatically returns to lobby and retries.
+          </p>
+        </div>
+
+        <div class="bento-box bento-4">
+          <div class="bento-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v16M4 12h16"/></svg>
+          </div>
+          <h3 class="bento-h3">Macro Manager & Paths</h3>
+          <p class="bento-p">
+            Visual block builder for pre-start routines (starter unit placement, in-game hotkey toggles, and WASD walk path recording).
+          </p>
+        </div>
+
+        <div class="bento-box bento-4">
+          <div class="bento-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          </div>
+          <h3 class="bento-h3">Discord Webhook OCR</h3>
+          <p class="bento-p">
+            Automatic screen OCR reads Yen, damage, clear time, and rewards off match end screens, posting summary cards to Discord.
+          </p>
+        </div>
+
+        <div class="bento-box bento-4">
+          <div class="bento-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="bento-h3">Editable Asset Crops</h3>
+          <p class="bento-p">
+            All template images live in an open `Assets/` directory. Replace or crop missing button templates via Image Manager without recompiling.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Tutorial Section -->
+  <section id="tutorial" class="tutorial-section">
+    <div class="container">
+      <div class="tutorial-grid">
+        <div>
+          <h2 class="section-title">Setup & Walkthrough Guide</h2>
+          <p class="section-subtitle" style="margin-bottom: 1.5rem;">
+            Watch the step-by-step setup tutorial on YouTube covering installation, window docking, and task queues.
+          </p>
+
+          <a href="https://www.youtube.com/watch?v=pPazUOL2a3w" target="_blank" class="btn btn-youtube">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Watch Video Tutorial
+          </a>
+        </div>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube-nocookie.com/embed/pPazUOL2a3w" title="Cream's Macro Video Tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads Section -->
+  <section id="downloads" class="downloads-section">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Download Releases</h2>
+        <p class="section-subtitle">Free and open source under the MIT License.</p>
+      </div>
+
+      <div class="dl-grid">
+        <div class="dl-card highlight">
+          <h3 class="dl-title">Windows 10 / 11 (Main)</h3>
+          <span class="dl-ver">Creams-Macro-Anime-Expeditions-Windows.zip</span>
+          
+          <ul class="dl-list">
+            <li>Native docked window support</li>
+            <li>Loose editable Assets/ folder included</li>
+            <li>Requires Microsoft Edge WebView2</li>
+          </ul>
+
+          <a href="https://github.com/Cweamy/Anime-Expeditions-Creams-Macro/releases/latest" target="_blank" class="btn btn-primary" style="width: 100%;">
+            Download Windows (.zip)
+          </a>
+        </div>
+
+        <div class="dl-card">
+          <h3 class="dl-title">macOS (Beta)</h3>
+          <span class="dl-ver">Creams-Macro-Anime-Expeditions-macOS.zip</span>
+          
+          <ul class="dl-list">
+            <li>Side-by-side game arrangement</li>
+            <li>Retina display scaling support</li>
+            <li>Requires Accessibility & Screen Recording permissions</li>
+          </ul>
+
+          <a href="https://github.com/Cweamy/Anime-Expeditions-Creams-Macro/releases/latest" target="_blank" class="btn btn-secondary" style="width: 100%;">
+            Download macOS (.zip)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong>Cream's Macro | Anime Expeditions</strong> — Open source automation tool.
+        </div>
+
+        <div class="footer-links">
+          <a href="https://github.com/Cweamy/Anime-Expeditions-Creams-Macro" target="_blank" class="footer-link">GitHub</a>
+          <a href="https://discord.gg/txB82C9G8" target="_blank" class="footer-link">Discord</a>
+          <a href="https://www.youtube.com/watch?v=pPazUOL2a3w" target="_blank" class="footer-link">YouTube Tutorial</a>
+          <a href="https://github.com/Cweamy/Anime-Expeditions-Creams-Macro/blob/main/LICENSE" target="_blank" class="footer-link">MIT License</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
