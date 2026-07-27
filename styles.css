@@ -348,7 +348,7 @@ header.app-header {
 }
 
 /* ==========================================================================
-   App Interface Mockup Frame (Fully Responsive - No Line Cutoffs)
+   App Interface Mockup Frame
    ========================================================================== */
 .app-mockup {
   background: var(--bg-card);
@@ -581,6 +581,99 @@ header.app-header {
 }
 
 /* ==========================================================================
+   Live Git Log Section (Fetches Public GitHub Commits)
+   ========================================================================== */
+.git-log-section {
+  padding: 4rem 0;
+  background: var(--bg-main);
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+.git-log-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.git-log-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  width: 100%;
+}
+
+.git-log-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color 0.15s ease;
+}
+
+.git-log-item:hover {
+  border-color: var(--brand);
+}
+
+.git-log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.git-sha-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--brand);
+  background: rgba(107, 138, 255, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid rgba(107, 138, 255, 0.25);
+}
+
+.git-sha-badge:hover {
+  text-decoration: underline;
+}
+
+.git-log-date {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-dark);
+}
+
+.git-log-msg {
+  font-size: 0.86rem;
+  color: var(--text-main);
+  font-weight: 500;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.git-log-author {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.git-log-loading, .git-log-error {
+  grid-column: span 2;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-family: var(--font-mono);
+}
+
+/* ==========================================================================
    Video Tutorial Section
    ========================================================================== */
 .tutorial-section {
@@ -721,10 +814,9 @@ footer.app-footer {
 }
 
 /* ==========================================================================
-   Comprehensive Mobile & Tablet Media Queries (Fixing all overflow & clipping)
+   Comprehensive Mobile & Tablet Media Queries
    ========================================================================== */
 
-/* Tablet (max-width: 900px) */
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -744,12 +836,15 @@ footer.app-footer {
     grid-template-columns: 1fr;
   }
 
+  .git-log-grid {
+    grid-template-columns: 1fr;
+  }
+
   .nav-menu {
-    display: none; /* Hide navigation text links on mobile, keeping logo + action icons */
+    display: none;
   }
 }
 
-/* Mobile Devices (max-width: 640px) */
 @media (max-width: 640px) {
   .container {
     padding: 0 1rem;
@@ -792,7 +887,6 @@ footer.app-footer {
     font-size: 0.65rem;
   }
 
-  /* FIX HERO MOCKUP CLIPPING ON MOBILE: STACK BODY TO SINGLE COLUMN */
   .mockup-body {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -805,7 +899,7 @@ footer.app-footer {
   }
 
   .mockup-mini-console {
-    display: none; /* Hide console log on mobile to keep mockup clean and unclipped */
+    display: none;
   }
 
   .mockup-display {
@@ -836,10 +930,9 @@ footer.app-footer {
   }
 }
 
-/* Small Screens (max-width: 400px) */
 @media (max-width: 400px) {
   .logo-tag {
-    display: none; /* Hide top micro tagline on tiny screens to avoid overflow */
+    display: none;
   }
 
   .header-actions {
